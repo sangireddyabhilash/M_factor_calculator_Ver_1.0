@@ -26,5 +26,3 @@ Download and install energyplus 7.2.
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~!
 
-Developed by Abhilash Sangireddy.
-IIIT Hyderabad.
