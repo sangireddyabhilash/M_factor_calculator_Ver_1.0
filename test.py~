@@ -1,6 +1,0 @@
-with open('./static/ash.txt', 'rt') as f1:
-	with open('./static/Data/1.txt', 'wt') as f2:
-		for a in f1:
-        		f2.write(a.replace('abhilash','22'))
-f1.close()
-f2.close()
