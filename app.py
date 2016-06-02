@@ -18,7 +18,7 @@ def success(name):
    tempo = name
    tempo1 = name
    tempo2 = name
-   os.system("runenergyplus ./static/Data/"+tempo+"input/"+tempo+".idf /usr/local/EnergyPlus-7-2-0/WeatherData/epw/IND_Hyderabad_ISHRAE_2013.epw")
+   os.system("runenergyplus ./static/Data/"+tempo+"input/"+tempo+".idf /usr/local/EnergyPlus-7-2-0/WeatherData/epw/hongkong.epw")
    k=glob.glob("./static/Data/"+tempo+"input/Output/*.html")
    pat = '<td align="right">Total Site Energy</td>'
    pat2= "\d+.\d+"
@@ -40,7 +40,7 @@ def success(name):
 
    Dict[tempo+'input'] = tuple2[0]
    while (float(tempo) > 0.05):
-      os.system("runenergyplus ./static/Data/"+tempo+"/"+tempo+".idf /usr/local/EnergyPlus-7-2-0/WeatherData/epw/IND_Hyderabad_ISHRAE_2013.epw")
+      os.system("runenergyplus ./static/Data/"+tempo+"/"+tempo+".idf /usr/local/EnergyPlus-7-2-0/WeatherData/epw/hongkong.epw")
       k=glob.glob("./static/Data/"+tempo+"/Output/*.html")
       pat = '<td align="right">Total Site Energy</td>'
       pat2= "\d+.\d+"
@@ -70,7 +70,7 @@ def success(name):
 
    os.system("rm -rf ./static/Data/*")
    while(float(tempo1) > 0.05):
-      if((Dict[tempo1] > Dict[tempo2+'input'])and (Dict[str(float(tempo1)-0.05)] < Dict[tempo2+'input'])):
+      if((Dict[tempo1] >= Dict[tempo2+'input'])and (Dict[str(float(tempo1)-0.05)] <= Dict[tempo2+'input'])):
          a = tempo1
          break
       else:
